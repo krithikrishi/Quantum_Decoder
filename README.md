@@ -9,13 +9,13 @@ This repository contains the implementation of a high-fidelity neural decoder de
 
 Our hybrid architecture demonstrates significant superiority over classical baselines and standard Transformers in high-dimensional syndrome spaces.
 
-| Code Distance (d) | Syndrome Features | Bi-LSTM Accuracy | MWPM Baseline |
-|-------------------|------------------|------------------|---------------|
-| d = 3 | 200 | 97.09% | 89.42% |
-| d = 5 | 600 | 98.36% | 92.15% |
-| d = 7 | 1,200 | 98.43% | 94.80% |
-| d = 9 | 2,000 | 92.49% | 88.30% |
-| d = 11 | 3,000 | 64.50% (The Wall) | 52.10% |
+| Code Distance (d) | Syndrome Features | Bi-LSTM Accuracy |
+|-------------------|------------------|------------------|
+| d = 3 | 200 | 97.09% |
+| d = 5 | 600 | 98.36% |
+| d = 7 | 1,200 | 98.43% |
+| d = 9 | 2,000 | 92.49% |
+| d = 11 | 3,000 | 64.50% |
 
 ---
 
@@ -51,10 +51,10 @@ python src/data_gen.py
 
 ### 3. Training
 
-To train the model for a specific distance (e.g., $d=9$):
+To train the model:
 
 ```bash
-python src/train.py --distance 9
+python src/bilstm.py 
 ```
 
 ---
@@ -64,7 +64,7 @@ python src/train.py --distance 9
 Verify the recovered accuracy of the trained weights:
 
 ```bash
-python scripts/validator.py --distance 7
+python scripts/integration.py 
 ```
 
 ---
